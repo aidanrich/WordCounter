@@ -12,6 +12,20 @@ export const ADD_PROFILE = gql`
   }
 `;
 
+export const ADD_PROJECT = gql`
+  mutation addProject($title: String!, $projectAuthor: String!){
+    addProject(title: $title, projectAuthor: $projectAuthor) {
+      project {
+        title
+        projectAuthor
+        startDate
+        finished
+        wordCount
+      }
+    }
+  }
+`;
+
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {

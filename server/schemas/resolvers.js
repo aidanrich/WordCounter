@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Profile } = require('../models');
+const Project = require('../models/Projects');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -20,6 +21,12 @@ const resolvers = {
 
       return { token, profile };
     },
+
+    addProject: async (parent, {title, projectAuthor }) => {
+      const project = await Project.create({ title, projectAuthor });
+      return { project };
+    },
+    
     login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });
 
