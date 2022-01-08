@@ -15,13 +15,12 @@ export const ADD_PROFILE = gql`
 export const ADD_PROJECT = gql`
   mutation addProject($title: String!, $projectAuthor: String!){
     addProject(title: $title, projectAuthor: $projectAuthor) {
-      project {
+        _id
         title
         projectAuthor
         startDate
         finished
         wordCount
-      }
     }
   }
 `;

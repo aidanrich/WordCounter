@@ -22,9 +22,9 @@ const resolvers = {
       return { token, profile };
     },
 
-    addProject: async (parent, {title, projectAuthor }) => {
+    addProject: async (parent, { title, projectAuthor }) => {
       const project = await Project.create({ title, projectAuthor });
-      return { project };
+      return project;
     },
     
     login: async (parent, { email, password }) => {

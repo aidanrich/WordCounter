@@ -19,13 +19,11 @@ const projectSchema = new Schema({
     },
     finished: {
         type: Boolean,
-        required: true,
         default: false,
     },
     wordCount: {
         type: Number,
         default: 0,
-        required: true,
     },
 
 });

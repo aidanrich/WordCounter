@@ -3,16 +3,16 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type Profile {
     _id: ID
-    name: String
-    email: String
-    password: String
-    projects: [String]!
+    name: String!
+    email: String!
+    password: String!
+    projects: [String]
   }
 
   type Project {
     _id: ID
-    title: String
-    projectAuthor: String
+    title: String!
+    projectAuthor: String!
     startDate: String
     finished: Boolean
     wordCount: Int
