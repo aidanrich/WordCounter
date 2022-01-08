@@ -8,7 +8,7 @@ import Auth from '../../utils/auth';
 
 const SkillForm = ({ profileId }) => {
   const [title, setSkill] = useState('');
-  
+  console.log(Auth.getProfile().data._id)
 
   const [addSkill, { error }] = useMutation(ADD_PROJECT);
 
@@ -16,11 +16,11 @@ const SkillForm = ({ profileId }) => {
     event.preventDefault();
 
     try {
-      const data = await addSkill({
-        variables: { projectAuthor: profileId, 
-          titel: title },
+      addSkill({
+        variables: { projectAuthor: Auth.getProfile().data._id, 
+          title: title },
       });
-      console.log(data)
+      
       setSkill('');
     } catch (err) {
       console.error(err);

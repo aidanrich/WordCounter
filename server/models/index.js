@@ -1,5 +1,5 @@
 const Profile = require('./Profile');
-const Projects = require('./Projects')
+const Project = require('./Projects')
 
-module.exports = { Profile, Projects };
+module.exports = { Profile, Project };
 
