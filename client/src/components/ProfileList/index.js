@@ -27,7 +27,7 @@ const ProfileList = ({ profiles, title }) => {
                   className="btn btn-block btn-squared btn-light text-dark"
                   to={`/profiles/${profile._id}`}
                 >
-                  View and endorse their skills.
+                  Add projects
                 </Link>
               </div>
             </div>

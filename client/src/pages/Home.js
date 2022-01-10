@@ -5,24 +5,31 @@ import ProfileList from '../components/ProfileList';
 
 import { QUERY_PROFILES } from '../utils/queries';
 
+import Auth from '../utils/auth';
+
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
   const profiles = data?.profiles || [];
 
   return (
     <main>
-      <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
-          {loading ? (
-            <div>Loading...</div>
+                {Auth.loggedIn() ? (
+                        <div className="flex-row justify-center">
+                        <div className="col-12 col-md-10 my-3">
+                          {loading ? (
+                            <div>Loading...</div>
+                          ) : (
+                            <ProfileList
+                              profiles={profiles}
+                              title="Here's your projects..."
+                            />
+                          )}
+                        </div>
+                      </div>
           ) : (
-            <ProfileList
-              profiles={profiles}
-              title="Here's your projects..."
-            />
+            <h2>Please login.</h2>
           )}
-        </div>
-      </div>
+
     </main>
   );
 };
