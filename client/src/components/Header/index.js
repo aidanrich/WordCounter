@@ -7,6 +7,7 @@ const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    window.location.assign('/')
   };
   return (
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center">

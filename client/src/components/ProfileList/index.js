@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
+
 
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
@@ -8,7 +10,7 @@ const ProfileList = ({ profiles, title }) => {
 
   return (
     <div>
-      <h3 className="text-primary">{title}</h3>
+      {/* <h3 className="text-primary">{title}</h3>
       <div className="flex-row justify-space-between my-4">
         {profiles &&
           profiles.map((profile) => (
@@ -21,18 +23,18 @@ const ProfileList = ({ profiles, title }) => {
                     endorsed skill
                     {profile.skills && profile.skills.length === 1 ? '' : 's'}
                   </span>
-                </h4>
+                </h4> */}
 
                 <Link
                   className="btn btn-block btn-squared btn-light text-dark"
-                  to={`/profiles/${profile._id}`}
+                  to={`/profiles/${Auth.getProfile().data._id}`}
                 >
                   Add projects
                 </Link>
-              </div>
+              {/* </div>
             </div>
           ))}
-      </div>
+      </div> */}
     </div>
   );
 };
