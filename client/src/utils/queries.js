@@ -17,3 +17,16 @@ export const QUERY_SINGLE_PROFILE = gql`
     }
   }
 `;
+
+export const QUERY_MY_PROJECTS = gql`
+query myProj($projectAuthor: String!) {
+  myProjects(projectAuthor: $projectAuthor) {
+    _id
+    title
+    projectAuthor
+    startDate
+    finished
+    wordCount
+  }
+}
+`;

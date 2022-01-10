@@ -12,6 +12,10 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
+
+    myProjects: async (parent, { projectAuthor }) => {
+      return await Project.find({ projectAuthor:  projectAuthor })
+    }
   },
 
   Mutation: {
